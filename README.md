@@ -7,14 +7,14 @@
         <h3>The project Architecture is:</h3>
         <p>REST CLIENT ---(CRUD)---- Controller Layer  Business/Service Layer  Database/Repository Layer  Database</p>
         <ul>
-            <li> REST CLIENT: Any application can be called as rest client which can send rest request and get the response back. Like postman, Browser Window etc. It interacts with Controller Layer through CRUD operations.<br></li>
-            <li>Controller Layer:  It will be interacting with REST CLIENT with CRUD operations. This layer is responsible to accept rest request and response back. All the rest api’s exposure will happened here. It will interact with Business/Service Layer.<br></li>
-            <li>Business/Service Layer: Any business logic which we want to write for our project should go there. It will interact with Repository/Database Layer.<br></li>
-            <li>Repository/Database Layer:</> Any database related operations will be in this layer. It will interact with the database.<br></li>
+            <li> REST CLIENT: Any application can be called as rest client which can send rest request and get the response back. Like postman, Browser Window etc. It interacts with Controller Layer through CRUD operations.<br><br></li>
+            <li>Controller Layer:  It will be interacting with REST CLIENT with CRUD operations. This layer is responsible to accept rest request and response back. All the rest api’s exposure will happened here. It will interact with Business/Service Layer.<br><br></li>
+            <li>Business/Service Layer: Any business logic which we want to write for our project should go there. It will interact with Repository/Database Layer.<br><br></li>
+            <li>Repository/Database Layer:</> Any database related operations will be in this layer. It will interact with the database.<br><br></li>
             <li>Database:</> It will perform the operations whatever is triggered by repository layer. Once that operation is performed, database will then the response back to repository layer.<br></li>
+        </ul>
             <p>Repository layer will send the response back to the service layer. And Service layer will send the response back to the controller layer. Controller layer will response back to the rest client.
             That how entire functionality works.</p>
-        </ul>
     </div>
     <div>
         <h3> Starting Project</h3>
@@ -23,6 +23,7 @@
             <li>Added the dependency 1. Spring Web, 2. JPA, 3. MySQL</li>
             <li>Created application.yaml in resource package where mysql database connector is configured.</li>
         </ul>
+        <br>
     </div>
     <div>
         <h3>Class Description</h3>
@@ -38,6 +39,7 @@
                     <li> @Table: Table(name = “table name”). It specifies the name of the database table to which this entity is mapped.</li>
                     <li> @Id: It is used to specify the primary key. Here we make vendorId as Primary key.</li>
                 </ol>
+                <br><br>
             </li>
             <li>
                 <b>Create CloudVendorController in Controller package.</b><br>
@@ -50,25 +52,25 @@
                 <p>Here “privet final CloudVendorService cloudVendorService” field hold an interface which provides methods for interacting with “CloudVendor” entities in the database.
                 “final” means it initializes only once and cannot be reassigned.
                 Lastly added a constructor and CRUD handler which fetch, persist and delete data in database.
-                </p>
+                </p><br>
             </li>
             <li>
                 <b>Create CloudVendorController in Controller package.</b><br>
-                <p>This interface outlines the contract for managing cloud vendor entities in the application. It defines a set of operations including CRUD.</p>
+                <p>This interface outlines the contract for managing cloud vendor entities in the application. It defines a set of operations including CRUD.</p><br>
             </li>
             <li>
                 <b>Create CloudVendorRepository class in repository package</b><br>
                 <p>It extends JPA repository interface which provides standard CRUD operations for the CloudVendor entity type.<br>
                 Here parameter “CloudVendor” refers to the entity type manage by this repository. And “String” is the type of primary key of the CloudVendor entity.<br>
                 It inherits various methods form JpaRepository such as Save, findById, findAll, delete etc.
-                </p>
+                </p><br>
             </li>
             <li>
                 Create CloudVendorServiceImplementation class in service.implementation package.<br>
                 <p>Here, Service annotation is a part of the spring framework and it indicate that this class is a service component that should be picked up during components scanning and managed by the spring container.<br>
                 This class implements all the methods of CloudVendorService interface,<br>
                 It provides implementations for CRUD operations on cloud vendor by interacting with the CloudVendorReporsitory. This class is managed by the spring container and is available for use throughout the application where CloudVendorService is required.
-                </p>
+                </p><br>
             </li>
             <li>
                 <b>Lastly, Exception Handling:</b><br>
