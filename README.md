@@ -34,7 +34,7 @@
                 Created a constructor with these parameters.<br>
                 Add Setter and getter method for each field.<br></p>
                 Used some annotations. Like
-                <ol>
+                <ol type="1">
                     <li> @Entity:  It marks the class as an entity indicating that instances of this class will be persisted to the database.</li>
                     <li> @Table: Table(name = “table name”). It specifies the name of the database table to which this entity is mapped.</li>
                     <li> @Id: It is used to specify the primary key. Here we make vendorId as Primary key.</li>
@@ -45,7 +45,7 @@
                 <b>Create CloudVendorController in Controller package.</b><br>
                 <p>It will work as Controller layer. <br>
                 Used some annotations. Like
-                <ol>
+                <ol type="1">
                     <li> @RestController: Used to define a controller class in spring MVC(model view controller) that handles http request and automatically serializes the return value int JSON or XML and write the response back to the HttpServletResponse Object.</li>
                     <li> @RequestMapping: It maps http request to handler methods of this controller class. All handler methods int this class are related to the base path “/cloudvendor”</li>
                 </ol>
@@ -75,7 +75,7 @@
             <li>
                 <b>Lastly, Exception Handling:</b><br>
                 <p>It handled by three steps.</p>
-                <ol 1>
+                <ol type="1">
                     <li> Create CloudVendorNotFoundException class which extends RuntimeException so that it can be recognize as Exception class or making it an unchecked exception. There will be two constructors. One constructor with only showing the error message, another will show the message with the cause of the exception.<br></li>
                     <li> Create class CloudVendorException with three field (message, cause, HTTP stutus) that will show the client. Create constructor with these fields and getter method for each.<br></li>
                     <li> Add handler to handle this exception. For this, create CloudVendorExceptionHandler class which include a handler method and the return type of this method will be ResponseEntity"Object".<br>
