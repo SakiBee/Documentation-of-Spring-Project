@@ -1,15 +1,15 @@
 <div>
     <h1>Cloud Vendor Service<h1>
-    <p>I created a project named Cloud Vendor API with Spring Boot which will provide cloud vendor information service. </p>
+    <p>I have created a project named Cloud Vendor API with Spring Boot which will provide cloud vendor information service. </p>
     <div>
-        <h3>The project Architecture is:</h3>
+        <h4>The project Architecture is:</h4>
         <p>REST CLIENT ---(CRUD)---- Controller Layer  Business/Service Layer  Database/Repository Layer  Database</p>
         <ul>
-            <li><b>REST CLIENT:</b> Any application can be called as rest client which can send rest request and get the response back. Like postman, Browser Window etc. It interacts with Controller Layer through CRUD operations.</li>
-            <li><b>Controller Layer:</b>  It will be interacting with REST CLIENT with CRUD operations. This layer is responsible to accept rest request and response back. All the rest api’s exposure will happened here. It will interact with Business/Service Layer.</li>
-            <li><b>Business/Service Layer:</b> Any business logic which we want to write for our project should go there. It will interact with Repository/Database Layer.</li>
-            <li><b>Repository/Database Layer:</b> Any database related operations will be in this layer. It will interact with the database.</li>
-            <li><b>Database:</b> It will perform the operations whatever is triggered by repository layer. Once that operation is performed, database will then the response back to repository layer.</li>
+            <li> REST CLIENT: Any application can be called as rest client which can send rest request and get the response back. Like postman, Browser Window etc. It interacts with Controller Layer through CRUD operations.</li>
+            <li>ontroller Layer:  It will be interacting with REST CLIENT with CRUD operations. This layer is responsible to accept rest request and response back. All the rest api’s exposure will happened here. It will interact with Business/Service Layer.</li>
+            <li>Business/Service Layer: Any business logic which we want to write for our project should go there. It will interact with Repository/Database Layer.</li>
+            <li>Repository/Database Layer:</> Any database related operations will be in this layer. It will interact with the database.</li>
+            <li>Database:</> It will perform the operations whatever is triggered by repository layer. Once that operation is performed, database will then the response back to repository layer.</li>
             <p>Repository layer will send the response back to the service layer. And Service layer will send the response back to the controller layer. Controller layer will response back to the rest client.
             That how entire functionality works.</p>
         </ul>
@@ -26,7 +26,7 @@
         <h2>Class Description</h2>
         <ul>
             <li>
-                <b>Create CloudVendor class in Model package.</b><br>
+                Create CloudVendor class in Model package.<br>
                 <p>Here we created the fields like vendorId, vendorName, vendorAddress and vendorPhoneNumber with each String type. 
                 Created a constructor with these parameters.<br>
                 Add Setter and getter method for each field.<br></p>
@@ -38,7 +38,7 @@
                 </ol>
             </li>
             <li>
-                <b>Create CloudVendorController in Controller package.</b><br>
+                Create CloudVendorController in Controller package.<br>
                 <p>It will work as Controller layer. <br>
                 <h4>Used some annotations. Like</h4>
                 <ol>
@@ -51,25 +51,25 @@
                 </p>
             </li>
             <li>
-                <b>Create CloudVendorController in Controller package.</b><br>
+                Create CloudVendorController in Controller package.<br>
                 <p>This interface outlines the contract for managing cloud vendor entities in the application. It defines a set of operations including CRUD.</p>
             </li>
             <li>
-                <b>Create CloudVendorRepository class in repository package</b><br>
+                Create CloudVendorRepository class in repository package<br>
                 <p>It extends JPA repository interface which provides standard CRUD operations for the CloudVendor entity type.<br>
                 Here parameter “CloudVendor” refers to the entity type manage by this repository. And “String” is the type of primary key of the CloudVendor entity.<br>
                 It inherits various methods form JpaRepository such as Save, findById, findAll, delete etc.
                 </p>
             </li>
             <li>
-                <b>Create CloudVendorServiceImplementation class in service.implementation package.</b><br>
+                Create CloudVendorServiceImplementation class in service.implementation package.<br>
                 <p>Here, Service annotation is a part of the spring framework and it indicate that this class is a service component that should be picked up during components scanning and managed by the spring container.<br>
                 This class implements all the methods of CloudVendorService interface,<br>
                 It provides implementations for CRUD operations on cloud vendor by interacting with the CloudVendorReporsitory. This class is managed by the spring container and is available for use throughout the application where CloudVendorService is required.
                 </p>
             </li>
             <li>
-                <b>Lastly, Exception Handling:</b><br>
+                Lastly, Exception Handling:<br>
                 <p>It handled by three steps.</p>
                 <ul>
                     <li>1.	Create CloudVendorNotFoundException class which extends RuntimeException so that it can be recognize as Exception class or making it an unchecked exception. There will be two constructors. One constructor with only showing the error message, another will show the message with the cause of the exception.</li>
