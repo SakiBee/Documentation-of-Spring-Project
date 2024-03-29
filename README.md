@@ -1,7 +1,7 @@
 <div>
     <div>
-        <h1>Cloud Vendor Service<h1>
-        <h4>I have created a project named Cloud Vendor API with Spring Boot which will provide cloud vendor information service. </h4>
+        <h1>Cloud Vendor Service</h1>
+        <p>I have created a project named Cloud Vendor API with Spring Boot which will provide cloud vendor information service. </p>
     </div>
     <div>
         <h3>The project Architecture is:</h3>
